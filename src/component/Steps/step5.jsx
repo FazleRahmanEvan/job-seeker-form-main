@@ -8,18 +8,18 @@ import {
   renderText,
 } from "../common/DisplayComponent";
 
-const Step2 = ({ state, handleChange, handleNext, handlePrev }) => {
+const Step5 = ({ state, handleChange, handleNext, handlePrev }) => {
   return (
     <Paper style={styles.steps}>
       <Box mt={2} mb={2}>
         {renderText({
-          label: "Basic Info",
+          label: "Experience",
           type: "h6",
           color: "textPrimary",
           align: "start",
         })}
         {renderText({
-          label: "Tell us a little bit about yourself.",
+          label: "Share your previous job experience with us.",
           type: "h8",
           color: "textPrimary",
           align: "start",
@@ -27,38 +27,44 @@ const Step2 = ({ state, handleChange, handleNext, handlePrev }) => {
       </Box>
 
       <Grid container spacing={1} style={{ marginBottom: "16px" }}>
-    
+        
          <Grid item xs={12} sm={6}>
           {renderInputField({
             state,
-            name: "firstName",
-            label: "First Name",
+            name: "yourPosition",
+            label: "Your Position",
             onChange: handleChange,
           })}
         </Grid>
         <Grid item xs={12} sm={6}>
           {renderInputField({
             state,
-            name: "lastName",
-            label: "Last Name",
+            name: "yourCompany",
+            label: "Your Company Name",
             onChange: handleChange,
           })}
         </Grid>
       </Grid>
 
       <Grid container spacing={1} style={{ marginBottom: "16px" }}>
-            <Grid item xs={12}>
-          {renderSelect({
+        <Grid item xs={12} sm={6}>
+          {renderInputField({
             state,
-            name: "gender",
-            label: "Gender",
-            options: [
-              { key: "Male", value: "male" },
-              { key: "Female", value: "female" },
-            ],
+            name: "jobStarted",
+            label: "Job Started Date",
             onChange: handleChange,
           })}
         </Grid>
+        <Grid item xs={12} sm={6}>
+          {renderInputField({
+            state,
+            name: "lastDate",
+            label: "Last Date of This Job",
+            onChange: handleChange,
+          })}
+        </Grid>
+     
+       
       </Grid>
 
       <Grid container component={Box} justify='flex-end' mt={2} p={2}>
@@ -75,4 +81,4 @@ const Step2 = ({ state, handleChange, handleNext, handlePrev }) => {
   );
 };
 
-export default Step2;
+export default Step5;

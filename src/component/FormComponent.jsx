@@ -15,31 +15,56 @@ import Step3 from "./Steps/step3";
 import FinalStep from "./Steps/FinalStep";
 import { renderText } from "./common/DisplayComponent";
 import { styles } from "./common/styles";
+import Step4 from "./Steps/step4";
+import Step5 from "./Steps/step5";
+import Step6 from "./Steps/step6";
 
 class FormComponent extends Component {
   state = {
     data: {
-      firstName: "",
-      lastName: "",
-      gender: "",
-      phone: "",
-      email: "",
+      userName: "",
+      email:"",
+      phone:"",
+      password:"",
 
-      highestDegree: "",
-      issuedBy: "",
-      yearOfPassing: "",
-      jobType: "",
+      firstName:"",
+      lastName:"",
+      gender:"",
 
-      skill: "",
-      jobApplyFor: "",
-      workExperence: "",
-      expectedSalary: "",
+      universityName:"",
+      highestDegree:"",
+      fieldYouStudy:"",
+      yearOfPassing:"",
+      overallGradePoints:"",
+
+      jobCategory:"",
+      currentJob:"",
+      workExperence:"",
+      expectedSalary:"",
+      jobApplyFor:"",
+
+      yourPosition:"",
+      yourCompany:"",
+      jobStarted:"",
+      lastDate:"",
+
+      fatherName:"",
+      motherName:"",
+      maritalStatus:"",
+      religion:"",
+      address:"",
+      roadName:"",
+      district:"",
+     
     },
     errors: {},
     steps: [
-      { label: "Personal Bio" },
-      { label: "Educational" },
-      { label: "Professional" },
+      { label: "Initial Info" },
+      { label: "Basic Info" },
+      { label: "Education" },
+      { label: "Job Requirement" },
+      { label: "Experience" },
+      { label: "Personal Info" },
     ],
     stepCount: 0,
   };
@@ -100,10 +125,37 @@ class FormComponent extends Component {
               handleChange={handleOnChange}
               handleNext={handleNextStep}
               handlePrev={handleBackStep}
-              handleSubmit={handleSubmit}
+              // handleSubmit={handleSubmit}
             />
           );
         case 3:
+          return (
+            <Step4
+              state={this.state}
+              handleChange={handleOnChange}
+              handleNext={handleNextStep}
+              handlePrev={handleBackStep}
+            />
+          );
+        case 4:
+          return (
+            <Step5
+              state={this.state}
+              handleChange={handleOnChange}
+              handleNext={handleNextStep}
+              handlePrev={handleBackStep}
+            />
+          );
+        case 5:
+          return (
+            <Step6
+              state={this.state}
+              handleChange={handleOnChange}
+              handleNext={handleNextStep}
+              handlePrev={handleBackStep}
+            />
+          );
+        case 6:
           return <FinalStep data={this.state.data} />;
         default:
           return (
@@ -123,7 +175,8 @@ class FormComponent extends Component {
             <Paper component={Box} mb={1}>
               <Box pt={2}>
                 {renderText({
-                  type: "h6",
+                  type: "h5",
+                  
                   color: "primary",
                   label: "Job Seeker Sign up Form",
                   align: "center",

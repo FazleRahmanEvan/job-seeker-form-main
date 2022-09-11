@@ -19,10 +19,16 @@ const Step3 = ({
     <Paper style={styles.steps}>
       <Box mt={2} mb={2}>
         {renderText({
-          label: "Professional Details",
+          label: "Educational Details",
           type: "h6",
           color: "textPrimary",
-          align: "center",
+          align: "start",
+        })}
+        {renderText({
+          label: "Give us your education information",
+          type: "h8",
+          color: "textPrimary",
+          align: "start",
         })}
       </Box>
       {/* skill: "",
@@ -31,44 +37,23 @@ const Step3 = ({
 
       <Grid container spacing={1} style={{ marginBottom: "16px" }}>
         <Grid item xs={12} sm={6}>
-          {renderSelect({
+          {renderInputField({
             state,
-            name: "skill",
-            label: "Skills You have",
-            options: [
-              { key: "Programming", value: "Programming" },
-              { key: "Communication", value: "Communication" },
-              { key: "Designing", value: "Designing" },
-              { key: "not Yet Defined", value: "not Yet Defined" },
-            ],
+            name: "universityName",
+            label: "University Name",
             onChange: handleChange,
           })}
         </Grid>
         <Grid item xs={12} sm={6}>
           {renderSelect({
             state,
-            name: "workExperence",
-            label: "Experence You have",
+            name: "highestDegree",
+            label: "Qualification Degree",
             options: [
-              { key: "Less than 1 year", value: "Less than 1 year" },
-              { key: "More than 1 year", value: "More than 1 year" },
-              { key: "1 year", value: "1 year" },
-            ],
-            onChange: handleChange,
-          })}
-        </Grid>
-      </Grid>
-
-      <Grid container spacing={1} style={{ marginBottom: "16px" }}>
-        <Grid item xs={12} sm={6}>
-          {renderSelect({
-            state,
-            name: "jobType",
-            label: "Choose Work Type",
-            options: [
-              { key: "Hybrid", value: "Hybrid" },
-              { key: "Official Work", value: "Official Work" },
-              { key: "Work from home", value: "Work from home" },
+              { key: "graduation", value: "Graduation" },
+              { key: "B.Sc.", value: "B.Sc." },
+              { key: "M.Sc.", value: "M.Sc." },
+             
             ],
             onChange: handleChange,
           })}
@@ -76,8 +61,28 @@ const Step3 = ({
         <Grid item xs={12} sm={6}>
           {renderInputField({
             state,
-            name: "expectedSalary",
-            label: " Expected Salaty",
+            name: "fieldYouStudy",
+            label: "Field You Study",
+            onChange: handleChange,
+          })}
+        </Grid>
+      </Grid>
+
+      <Grid container spacing={1} style={{ marginBottom: "16px" }}>
+       
+        <Grid item xs={12} sm={6}>
+          {renderInputField({
+            state,
+            name: "yearOfPassing",
+            label: "Passing Year",
+            onChange: handleChange,
+          })}
+        </Grid>
+        <Grid item xs={12} sm={6}>
+          {renderInputField({
+            state,
+            name: "overallGradePoints",
+            label: "Overall Grade Points",
             onChange: handleChange,
           })}
         </Grid>
@@ -92,7 +97,8 @@ const Step3 = ({
           })}
         </Box>
         <Box ml={2}>
-          {renderButton({ label: "Submit", onClick: handleNext })}
+      
+          {renderButton({ label: "Next", onClick: handleNext })}
         </Box>
       </Grid>
     </Paper>

@@ -50,8 +50,8 @@ export const renderSelect = ({ name, label, options, state, onChange }) => {
 
 export const renderButton = ({ label, variant, color, fullWidth, onClick }) => (
   <Button
-    variant={variant ? variant : "outlined"}
-    color={color ? color : "primary"}
+    variant={variant ? variant : "contained"}
+    color= "primary"
     fullWidth={fullWidth ? fullWidth : false}
     onClick={onClick}>
     {label}
